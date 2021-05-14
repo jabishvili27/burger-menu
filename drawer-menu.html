@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Drawer menu</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar">
+      <div class="drawer-menu">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+      </div>
+      <ul class="menu-list">
+        <li class="item">Home</li>
+        <li class="item">About us</li>
+        <li class="item">Events</li>
+        <li class="item">Photos</li>
+        <li class="item">Contact</li>
+      </ul>
+    </nav>
+    <div class="cont">
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+
+          <img class="img"
+            src="https://c4.wallpaperflare.com/wallpaper/719/47/614/nature-landscape-sunset-palm-trees-wallpaper-preview.jpg">
+
+        </div>
+
+        <div class="mySlides fade">
+
+          <img class="img" src="https://wallpaperaccess.com/full/1131204.jpg">
+
+        </div>
+
+        <div class="mySlides fade">
+
+          <img class="img" src="https://i.pinimg.com/originals/7a/d7/f0/7ad7f09492cc0ef8967177b2b385d8d9.jpg">
+
+        </div>
+
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </div>
+  </div>
+  <script src="./drawer-menu.js"></script>
+</body>
+
+</html>

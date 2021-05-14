@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "dosis", sans-serif;
+}
+.wrapper {
+  width: 100%;
+  height: 100vh;
+}
+.drawer-menu {
+  width: 35px;
+  height: 30px;
+  position: fixed;
+  z-index: 20;
+  top: 50px;
+  right: 50px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  display: none;
+}
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: #a56fc7;
+  transition: all 0.8s;
+}
+
+.navbar {
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(138, 137, 208, 1) 0%,
+    rgba(208, 188, 239, 1) 100%
+  );
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40% 0 0 60%;
+  transition: right 0.8s;
+}
+.menu-list {
+  text-align: left;
+  z-index: 20;
+}
+.item {
+  list-style: none;
+  margin: 30px;
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 5px 0px;
+  cursor: pointer;
+}
+.item::before,
+.item::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #a56fc7;
+  position: absolute;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+.item::after {
+  bottom: 0;
+  transform-origin: right;
+}
+.item::before {
+  top: 0;
+  transform-origin: left;
+}
+.item:hover::after,
+.item:hover::before {
+  transform: scaleX(1);
+}
+.item:hover {
+  color: rgb(235, 232, 232);
+}
+.item:active {
+  color: #a56fc7;
+}
+
+@media screen and (max-width: 1000px) {
+  .open.navbar {
+    right: 0;
+    border-radius: 40% 0 0 60%;
+  }
+  .drawer-menu {
+    display: flex;
+  }
+  .navbar {
+    right: -300px;
+  }
+
+  .line1 {
+    transform: rotateZ(0deg) translate(0px, 0px);
+  }
+  .line2 {
+    opacity: 1;
+  }
+  .line3 {
+    transform: rotateZ(0deg) translate(0px, 0px);
+  }
+  .open .line1 {
+    transform: rotateZ(-45deg) translate(-8px, 6px);
+  }
+  .open .line2 {
+    opacity: 0;
+  }
+  .open .line3 {
+    transform: rotateZ(45deg) translate(-8px, -6px);
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+.cont {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.img {
+  width: 1000px;
+  border-radius: 30px;
+}
+@media screen and (max-width: 900px) {
+  .img {
+    width: 400px;
+    margin-left: -200px;
+  }
+  .next,
+  .prev {
+    margin-left: -200px;
+  }
+}
+.mySlides {
+  display: none;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: rgb(110, 9, 9);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
